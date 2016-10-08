@@ -71,7 +71,7 @@ class JWTListener implements ListenerInterface {
                 if (isset($decoded->{$this->options['username_claim']})) {
                     $user = $decoded->{$this->options['username_claim']};
                 }
-
+                $user= new User($decoded->name, '');
                 $token = new JWTToken(
                     $user,
                     $requestToken,
